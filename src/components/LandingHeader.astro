@@ -1,0 +1,34 @@
+---
+import Logo from '../components/Logo.astro';
+---
+
+
+<header class="py-5 px-10 flex items-center fixed top-0 w-full justify-between z-40">
+    <div class="flex flex-grow basis-0">
+        <Logo />
+    </div>
+
+    <nav class="flex flex-grow basis-0">
+        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+            <li><a href="#">Quiénes somos</a></li>
+            <li><a href="#">Cortos</a></li>
+            <li><a href="#">Reels</a></li>
+            <li><a href="#">Animación</a></li>
+            <li><a href="#">Fotografía</a></li>
+            <li><a href="#">Contáctenos</a></li>
+        </ul>
+    </nav>
+
+    <nav class="flex flex-grow basis-0 justify-end">
+        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+            <li><a href="#">Tienda</a></li>
+            <li><a href="#">Soporte</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+	a {
+		font-size: 12px;
+	}
+</style>
