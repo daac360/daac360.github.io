@@ -2,14 +2,13 @@
 import Logo from '../components/Logo.astro';
 ---
 
-
-<header class="py-5 px-10 flex items-center fixed top-0 w-full justify-between z-40">
+<header class="py-5 px-10 flex items-center fixed top-0 w-full justify-between z-40 " id="landing-header">
     <div class="flex flex-grow basis-0">
         <Logo />
     </div>
 
     <nav class="flex flex-grow basis-0">
-        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:transition-colors [&>li>a]:duration-400" >
             <li><a href="#">Quiénes somos</a></li>
             <li><a href="#">Cortos</a></li>
             <li><a href="#">Reels</a></li>
@@ -20,11 +19,23 @@ import Logo from '../components/Logo.astro';
     </nav>
 
     <nav class="flex flex-grow basis-0 justify-end">
-        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:transition-colors [&>li>a]:duration-400">
             <li><a href="#">Tienda</a></li>
             <li><a href="#">Soporte</a></li>
         </ul>
     </nav>
+
+    <div 
+        id="menu-backdrop"
+        class={`
+            absolute bg-black/5 backdrop-blur-lg rounded
+            left-[var(--left)] top-[var(--top)]
+            w-[var(--width)] h-[var(--height)]
+            transition-all duration-300
+            ease-in-out opacity-0 -z-10
+        `}
+    />
+
 </header>
 
 <style>
@@ -32,3 +43,63 @@ import Logo from '../components/Logo.astro';
 		font-size: 12px;
 	}
 </style>
+
+<script>
+    const listItems = document.querySelectorAll("#landing-header li")
+    const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement
+
+    listItems.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            const { left, top, width, height } = item.getBoundingClientRect()
+            const { clientHeight, clientWidth } = item
+
+            menuBackDrop.style.setProperty("--left", `${left}px`)
+            menuBackDrop.style.setProperty("--top", `${top}px`)
+            menuBackDrop.style.setProperty("--width", `${width}px`)
+            menuBackDrop.style.setProperty("--height", `${height}px`)
+
+            menuBackDrop.style.opacity = "1"
+            menuBackDrop.style.visibility = "visible"
+        })
+
+        item.addEventListener("mouseleave", () => {
+            menuBackDrop.style.opacity = "0"
+            menuBackDrop.style.visibility = "hidden"
+        })
+    })
+
+</script>
+
+<script>
+
+    
+    //Utilizando INTERCECTION OBSERVER: Detecta cuando un elemento ha aparecido en el viewport, cuál es su psoición y cuanto del él (%) hay visible
+
+    const observerOptions = {
+        root: null, //null indica que se utiliza el vioewport, se puede utilizar cualquier tipo de elemento, por ejemplo una Card
+        rootMargin: '0px', //indica que se requiere que se ejecute en cuanto se vea el elemento
+        threshold: 0.9 //porcentaje de visibilidad. Gracias al scroll snap utilizado siempre se tendrá una section completa visible, nunca a medias
+    }
+
+    //Creamos el observador, el que va a observar los elementos
+    
+    const headerElement = document.querySelector('#landing-header') as HTMLElement //HTMLElement es TypeScript
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const { isIntersecting } = entry
+            if (isIntersecting) {
+                const color = entry.target.getAttribute('data-header-color')
+                headerElement.style.color = color
+                console.log(color)
+            }
+        })
+    }, observerOptions)
+
+    const sectionsElements = document.querySelectorAll('.landing-section')
+    sectionsElements.forEach((section) => observer.observe(section))
+
+
+
+
+</script>
