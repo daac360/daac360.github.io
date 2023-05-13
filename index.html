@@ -7,13 +7,14 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" type="text/css">
 		<meta name="generator" content="Astro v2.4.5">
 		<title>DAAC360 FILMS</title>
-	<link rel="stylesheet" href="/_astro/index.50b056f0.css" /></head>
-	<body>
+	<link rel="stylesheet" href="/_astro/index.0b563088.css" /><script type="module">const l={root:null,rootMargin:"0px",threshold:.9},c=document.querySelector("#landing-header"),i=new IntersectionObserver(t=>{t.forEach(o=>{const{isIntersecting:s}=o;if(s){const r=o.target.getAttribute("data-header-color");c.style.color=r,console.log(r)}})},l),d=document.querySelectorAll(".landing-section");d.forEach(t=>i.observe(t));const a=document.querySelectorAll("#landing-header li"),e=document.querySelector("#menu-backdrop");a.forEach(t=>{t.addEventListener("mouseenter",()=>{const{left:o,top:s,width:r,height:n}=t.getBoundingClientRect();e.style.setProperty("--left",`${o}px`),e.style.setProperty("--top",`${s}px`),e.style.setProperty("--width",`${r}px`),e.style.setProperty("--height",`${n}px`),e.style.opacity="1",e.style.visibility="visible"}),t.addEventListener("mouseleave",()=>{e.style.opacity="0",e.style.visibility="hidden"})});
+</script></head>
+	<body class="overflow-x-hidden">
 		
 	
-	<header class="py-5 px-10 flex items-center fixed top-0 w-full justify-between z-40 astro-QCCBMZFI">
+	<header class="py-5 px-10 flex items-center fixed top-0 w-full justify-between z-40  astro-QCCBMZFI" id="landing-header">
     <div class="flex flex-grow basis-0 astro-QCCBMZFI">
-        <svg class="h-10 w-32 astro-TVRURPNS" width="694.17" height="247.12" viewBox="0 0 694.17 247.12" xmlns="http://www.w3.org/2000/svg">
+        <svg class="h-10 w-32 transition-colors duration-400 astro-TVRURPNS" width="694.17" height="247.12" viewBox="0 0 694.17 247.12" xmlns="http://www.w3.org/2000/svg">
 
     <g class="astro-TVRURPNS">
         <title>Layer 1</title>
@@ -177,7 +178,7 @@
     </div>
 
     <nav class="flex flex-grow basis-0 astro-QCCBMZFI">
-        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 astro-QCCBMZFI">
+        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:transition-colors [&>li>a]:duration-400 astro-QCCBMZFI">
             <li class="astro-QCCBMZFI"><a href="#" class="astro-QCCBMZFI">Quiénes somos</a></li>
             <li class="astro-QCCBMZFI"><a href="#" class="astro-QCCBMZFI">Cortos</a></li>
             <li class="astro-QCCBMZFI"><a href="#" class="astro-QCCBMZFI">Reels</a></li>
@@ -188,16 +189,26 @@
     </nav>
 
     <nav class="flex flex-grow basis-0 justify-end astro-QCCBMZFI">
-        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 astro-QCCBMZFI">
+        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:transition-colors [&>li>a]:duration-400 astro-QCCBMZFI">
             <li class="astro-QCCBMZFI"><a href="#" class="astro-QCCBMZFI">Tienda</a></li>
             <li class="astro-QCCBMZFI"><a href="#" class="astro-QCCBMZFI">Soporte</a></li>
         </ul>
     </nav>
+
+    <div id="menu-backdrop" class="
+            absolute bg-black/5 backdrop-blur-lg rounded
+            left-[var(--left)] top-[var(--top)]
+            w-[var(--width)] h-[var(--height)]
+            transition-all duration-300
+            ease-in-out opacity-0 -z-10
+         astro-QCCBMZFI"></div>
+
 </header>
 	
-	<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
+	<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto overflow-x-hidden scroll-smooth">
+
 		<div class="snap-center">
-			<section class="bg-black h-screen w-screen text-center relative overflow-hidden astro-NLOW4R3U">
+			<section class="landing-section bg-black h-screen w-screen text-center relative  astro-NLOW4R3U" data-header-color="Tomato">
 
     <div class="z-30 relative h-full flex flex-col astro-NLOW4R3U">
         <header class="astro-NLOW4R3U">
@@ -207,7 +218,7 @@
         
         <footer class="flex flex-grow flex-col justify-end pb-24 astro-NLOW4R3U">
             <div class="astro-NLOW4R3U">
-                <a class="border-1 border-white bg-white/5 backdrop-blur-md rounded px-12 py-2 inline-block hover:text-black hover:bg-white transition-colors  astro-NLOW4R3U" href="#">¿Hablamos?</a>
+                <a class="border-1 text-white border-white bg-white/5 backdrop-blur-md rounded px-12 py-2 inline-block hover:text-black hover:bg-white transition-colors  astro-NLOW4R3U" href="#">¿Hablamos?</a>
             </div>
         </footer>
     </div>
@@ -219,7 +230,7 @@
 </section>
 		</div>
 		<div class="snap-center">
-			<section class="bg-black h-screen w-screen text-center relative overflow-hidden astro-RLRYVHYD">
+			<section class="landing-section bg-black h-screen w-screen text-center relative overflow-hidden astro-RLRYVHYD" data-header-color="black">
 
     <div class="z-30 relative h-full flex flex-col astro-RLRYVHYD">
         <!-- <header>
@@ -241,31 +252,18 @@
 </section>
 		</div>
 		<div class="snap-center">
-			<section class="bg-black h-screen w-screen text-center relative overflow-hidden astro-LYO4CQ5W">
+			<section class="landing-section bg-black h-screen w-screen text-center relative overflow-hidden astro-LYO4CQ5W" data-header-color="white">
 
     <div class="z-30 relative h-full flex flex-col astro-LYO4CQ5W">
-        <!-- <header>
-            <h2 class="text-black pt-40 text-[40px] font-medium">DAAC360 FILMS</h2>
-            <p class="text-black text-sm">Servicios audiovisuales con estilo</p>
-        </header>
-        
-        <footer class="flex flex-grow flex-col justify-end pb-24">
-            <div>
-                <a class="border-1 border-white bg-white/5 backdrop-blur-md rounded px-12 py-2 inline-block hover:text-black hover:bg-white transition-colors " href="#">¿Hablamos?</a>
-            </div>
-        </footer> -->
+        <div class="absolute top-0 h-full bottom-0 z-10 w-full astro-LYO4CQ5W">
+            <img src="/grumpy3.jpg" class="h-full w-full object-fit object-center astro-LYO4CQ5W">
+        </div>    
     </div>
 
-    <div class="absolute top-0 h-full bottom-0 z-10 w-full astro-LYO4CQ5W">
-        <img src="/grumpy2.jpg" class="h-full w-full object-fit object-center astro-LYO4CQ5W">
-    </div>
+    
     
 </section>
 		</div>
-					
-		
-		
-		
 
 	</main>
 
